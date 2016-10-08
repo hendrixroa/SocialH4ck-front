@@ -1,0 +1,16 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+		        <h3>Ver mapa de:</h3>
+			<div ng-repeat="dato in data">
+				<a class="btn btn-primary" ng-click="verMapa(dato.latitude,dato.longitude)">{{ dato.name }}</a><br><br>
+			</div>
+		</div>
+	</div><br>
+	<div class="row" ng-show="showMapa">
+		<div map-lazy-load="https://maps.google.com/maps/api/js"
+		 map-lazy-load-params="{{googleMapsUrl}}">
+			<ng-map center="52.277565 , -45.962222" zoom="3"></ng-map>
+		</div>
+	</div>
+</div>
