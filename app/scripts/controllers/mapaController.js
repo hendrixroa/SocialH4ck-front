@@ -10,8 +10,6 @@
 angular.module('socialH4ckFrontApp')
   .controller('MapaCtrl', function ($scope, $http) {
     
-    //$scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyCepkWd2aD355Hxr-DNpP31bD39qvnrOuw";
-
     $scope.data = [];
     $scope.showMapa = false;
     $scope.map = { center:{
