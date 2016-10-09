@@ -8,20 +8,17 @@
  * Controller of the socialH4ckFrontApp
  */
 angular.module('socialH4ckFrontApp')
-  .controller('MapaCtrl', function ($scope, $http, NgMap) {
+  .controller('MapaCtrl', function ($scope, $http) {
     
-    $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyCepkWd2aD355Hxr-DNpP31bD39qvnrOuw";
+    //$scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyCepkWd2aD355Hxr-DNpP31bD39qvnrOuw";
 
     $scope.data = [];
     $scope.showMapa = false;
-    $scope.long = null;
-    $scope.lati = null; 
-
-    NgMap.getMap().then(function(map) {
-    console.log(map.getCenter());
-    console.log('markers', map.markers);
-    console.log('shapes', map.shapes);
-    });
+    $scope.map = { center:{
+        lati:0,
+        long:0
+     } 
+    };
 
     angular.element(document).ready(function () {
       
@@ -35,8 +32,11 @@ angular.module('socialH4ckFrontApp')
 
     $scope.verMapa = function(lati,long){
       $scope.showMapa = !$scope.showMapa;
-      $scope.lati = lati;
-      $scope.long = long;
+      $scope.lati = null;
+      $scope.long = null;
+      $scope.map.center.lati = lati;
+      $scope.map.center.long = long;
+      return $scope.map;
     };
 
 
