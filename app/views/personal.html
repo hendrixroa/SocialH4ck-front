@@ -3,7 +3,7 @@
 		<div class="panel panel-default">
 			<div class="panel-heading"><h1 class="title-center">{{user.name}}</h1></div>
 			<div class="panel-body">
-				<div class="col-md-6 col-md-offset-5">
+				<div class="col-md-10 col-sm-10 col-xs-10 col-lg-10">
 				<img src="{{user.picture}}" class="img-responsive">
 				<p><b>Genero:</b> {{user.gender}}</p>
 				<p><b>Edad:</b> {{user.age}}</p>
@@ -16,7 +16,7 @@
 				<p><b>Acerca:</b> {{user.about}}</p>
 				<p><b>Registrado:</b> {{user.registered}}</p>
 				<p><b>Tags:</b></p>
-				<div ng-repeat="tag in user.tags">
+				<div ng-repeat="tag in user.tags track by $index">
 					{{tag}}
 				</div>
 				<p><b>Saludo: </b>{{user.greeting}}</p>
